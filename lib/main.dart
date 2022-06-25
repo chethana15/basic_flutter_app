@@ -11,7 +11,8 @@ void main() {
         child: Center(
 			child: Text(
 				"Hello World!!",
-				textDirection: TextDirection.ltr
+				textDirection: TextDirection.ltr,
+        style: TextStyle(fontSize: 30.0, color: Colors.white),
 		  ),
 		),
       )
