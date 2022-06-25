@@ -3,11 +3,20 @@ import 'package:flutter/material.dart';
 void main() {
 
 	runApp(
-		Center(
+
+    new MaterialApp(
+      title: "My First Flutter App",
+      home: new Material(
+        color: Colors.amberAccent,
+        child: Center(
 			child: Text(
-				"Hello Flutter",
+				"Hello World!!",
 				textDirection: TextDirection.ltr
 		  ),
-		)
+		),
+      )
+    )
+
+		
 	);
 }
