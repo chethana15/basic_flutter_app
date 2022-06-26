@@ -24,6 +24,9 @@ Widget getListView(){
         title: Text("Happy Birthday"),
         subtitle: Text("Have a great day!"),
         trailing: Icon(Icons.access_time),
+        onTap: (){
+          debugPrint("You tapped Happy birthday list");
+        },
        ),
 
         ListTile(
