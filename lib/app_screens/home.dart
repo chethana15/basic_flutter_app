@@ -75,6 +75,7 @@ class Home extends StatelessWidget {
         ],
       ),
       Fruit(),
+      orderFruit(),
         ],
       )
   
@@ -92,5 +93,48 @@ class Home extends StatelessWidget {
     AssetImage assetImage = AssetImage('images/strawberries.jpg');
     Image image = Image(image: assetImage, width: 250.0, height: 250.0,);
     return Container(child: image,);
+  }
+}
+
+class orderFruit extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250,
+      height: 50,
+      child: ElevatedButton(
+           child:Text("Order your fruits", 
+           style: TextStyle(
+            fontSize: 25.0, 
+            color: Colors.white,
+            fontFamily: 'DancingScript',
+            fontWeight: FontWeight.w700,  
+            ),
+            ),
+           style: ElevatedButton.styleFrom(
+             primary: Colors.deepOrange, // foreground
+           ),
+           onPressed: () =>
+            tappedButton(context)
+           ,
+         )
+       
+    );
+  }
+  
+  void tappedButton(BuildContext context){
+    //create alert dialogue
+    var alertDialogue = AlertDialog(
+      title: Text("fruits ordered successfully"),
+      content: Text("Love to eat your favourite fruits"),
+    );
+
+    showDialog(
+      context: context, 
+      builder: (BuildContext context) => alertDialogue 
+      
+      );
   }
 }
