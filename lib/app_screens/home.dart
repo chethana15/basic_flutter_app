@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
         // height: 100.0,
       // margin: EdgeInsets.all(20.0),  
       //  margin: EdgeInsets.only(left: 0.0, right: 0.0, top: 40.0, bottom: 0.0),
-      padding: EdgeInsets.only(top: 40.0,left: 20.0),
+      padding: EdgeInsets.only(top: 40.0,left: 20.0, right: 20.0),
       alignment: Alignment.center,
       color: Color.fromARGB(255, 208, 126, 246),
       child: Column(
@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
               Row(
         children: <Widget>[
         Expanded(child: Text(
-        "Rain", 
+        "fruit_1", 
         textDirection: TextDirection.ltr,
         style: TextStyle(
           decoration:TextDecoration.none,
@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
         ),  
 
          Expanded(child: Text(
-        "Rain, rain, go away", 
+        "orange", 
         textDirection: TextDirection.ltr,
         style: TextStyle(
           decoration:TextDecoration.none,
@@ -44,10 +44,11 @@ class Home extends StatelessWidget {
         ) 
         ],
       ),
+      Fruit(),
            Row(
         children: <Widget>[
         Expanded(child: Text(
-        "Rain", 
+        "fruit_2", 
         textDirection: TextDirection.ltr,
         style: TextStyle(
           decoration:TextDecoration.none,
@@ -60,7 +61,7 @@ class Home extends StatelessWidget {
         ),  
 
          Expanded(child: Text(
-        "Rain, rain, go away", 
+        "strawberries", 
         textDirection: TextDirection.ltr,
         style: TextStyle(
           decoration:TextDecoration.none,
@@ -72,18 +73,24 @@ class Home extends StatelessWidget {
         ),
         ) 
         ],
-      )
+      ),
+      Fruit(),
         ],
       )
-      
-      
- 
-      
-      
-      
+  
     ),
     )
     
     ;
+  }
+}
+
+ class Fruit extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = AssetImage('images/strawberries.jpg');
+    Image image = Image(image: assetImage, width: 250.0, height: 250.0,);
+    return Container(child: image,);
   }
 }
