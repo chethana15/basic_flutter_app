@@ -14,6 +14,8 @@ void main(){
   );
 }
 
+//used for smaller number of list views
+//loads all items in memeory when attached to screen
 Widget getListView(){
 
   var listView = ListView(
