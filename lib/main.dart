@@ -59,7 +59,7 @@ Widget getListView(){
         title: Text(listItems[index]),
         onTap: (){
           // debugPrint("You tapped $index");
-          showSnackBar(context, listItems[index]);
+          showSnackBar(context, listItems[index]);//similar to floating button snack button should also be added under scaffold widget
         },
        );
     }
