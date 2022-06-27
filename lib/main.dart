@@ -8,8 +8,18 @@ void main(){
     title: "Exploring UI widgets",
     home: Scaffold(
       appBar: AppBar(title: Text("Basic List View"),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () { 
+          debugPrint("You tapped Floating Action Button");
+         },
+        child: Icon(Icons.add),
+        
+        tooltip: "Add one more item",
+        ),
+        
       //no changes
       body: getListView(),
+
     ),
   )
   );
@@ -17,7 +27,7 @@ void main(){
 
 //prepare datasource
 //convert datasource into widgets
-//use widgets as children of listview
+//use widgets as children of listview 
 
 //prepare datasource
 List<String> getListElements(){
