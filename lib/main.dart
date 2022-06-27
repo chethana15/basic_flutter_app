@@ -8,16 +8,39 @@ void main(){
     title: "Exploring UI widgets",
     home: Scaffold(
       appBar: AppBar(title: Text("Basic List View"),),
+      floatingActionButton: FloatingActionButton(  //floating action button should always be present within scaffold widget
+        onPressed: () { 
+          debugPrint("You tapped Floating Action Button");
+         },
+        child: Icon(Icons.add),
+        
+        tooltip: "Add one more item",
+        ),
+        
       //no changes
       body: getListView(),
+
     ),
   )
   );
 }
 
+void showSnackBar(BuildContext context, String item){
+var snackBar = SnackBar(
+  content: Text("You tapped $item now"),
+  action: SnackBarAction(
+    label: "UNDO", onPressed: (){
+      debugPrint("Perfroming dummy UNDO action");
+    },
+    ),
+  );
+
+  Scaffold.of(context).showSnackBar(snackBar);
+
+}
 //prepare datasource
 //convert datasource into widgets
-//use widgets as children of listview
+//use widgets as children of listview 
 
 //prepare datasource
 List<String> getListElements(){
@@ -35,7 +58,8 @@ Widget getListView(){
        return ListTile(
         title: Text(listItems[index]),
         onTap: (){
-          debugPrint("You tapped $index");
+          // debugPrint("You tapped $index");
+          showSnackBar(context, listItems[index]);
         },
        );
     }
