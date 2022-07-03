@@ -20,8 +20,8 @@ class FavCity extends StatefulWidget {
 
 class _FavCityState extends State<FavCity> {
 
-  var cityName;
-
+  var cityName = "";
+  var currentItemSelected = 'Rupees';
   @override
   Widget build(BuildContext context) {
 
@@ -43,6 +43,30 @@ debugPrint("Favourite city widget is created");
           
           },
         ),
+       
+       DropdownButton<String> (
+        value: currentItemSelected,
+        icon: const Icon(Icons.arrow_downward),
+        elevation: 16,
+        style: const TextStyle(color: Color.fromARGB(255, 6, 0, 15)),
+      underline: Container(
+        height: 2,
+        color: Color.fromARGB(255, 66, 3, 239),
+      ),
+        onChanged: (String? newValue){
+          setState(() {
+            currentItemSelected = newValue!;
+          });
+        },
+        items: <String>["Rupees", "Dollars", "Pounds", "Others"].map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+
+       ),  
+
         Padding(padding: EdgeInsets.all(30.0),
         child: Text(
           "$cityName is my favourite city!",
@@ -50,7 +74,7 @@ debugPrint("Favourite city widget is created");
           style: TextStyle(fontSize: 20.0),
         ),
         )
-        
+         
 
       ]
       ),
